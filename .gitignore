@@ -1,0 +1,8 @@
+assets/
+case-studies/
+dist/
+*.pdf
+.vercel/
+.env*
+.vscode/
+__pycache__/
