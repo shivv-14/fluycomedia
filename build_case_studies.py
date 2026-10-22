@@ -140,11 +140,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 body{padding-bottom:calc(34px + env(safe-area-inset-bottom,0px))}
 .credit-bar{position:fixed;left:0;right:0;bottom:0;z-index:95;display:flex;align-items:center;justify-content:center;gap:8px;min-height:34px;padding:0 16px env(safe-area-inset-bottom,0px);background:rgba(0,0,0,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border-soft);font-size:12.5px;color:var(--muted)}
-.credit-bar a{color:#f3f3f3;font-weight:500;text-underline-offset:3px}.credit-bar a:hover{color:#fff;text-decoration:underline}
+.credit-bar a{color:#d8d8d8;font-weight:500;transition:color .35s var(--ease)}.credit-bar a:hover,.credit-bar a:focus-visible{color:#fff}.sweep{background:linear-gradient(90deg,#fff,#8a8a8a) no-repeat 0 100%/0% 1px;padding-bottom:2px;transition:background-size .35s var(--ease)}.credit-bar a .sweep:nth-child(2){transition-delay:.06s}.credit-bar a .sweep:nth-child(3){transition-delay:.12s}.credit-bar a:hover .sweep,.credit-bar a:focus-visible .sweep,.more a:hover b,.back:hover span{background-size:100% 1px}.more b,.back span{background:linear-gradient(90deg,#fff,#8a8a8a) no-repeat 0 100%/0% 1px;padding-bottom:2px;transition:background-size .35s var(--ease)}
 @media (max-width:760px){.hero{grid-template-columns:1fr;gap:28px}.photo{max-width:220px}.closing{grid-template-columns:1fr}section{padding-top:80px}.stats{margin-top:64px}.stat{padding:20px}.back span{display:none}}
 """
 
-LOGO = '<svg viewBox="0 0 100 84" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#8a8a8a"/></linearGradient><mask id="lm"><rect width="100" height="84" fill="#fff"/><circle cx="62" cy="58" r="25" fill="#000"/></mask></defs><path mask="url(#lm)" fill="url(#lg)" d="M34 6h48c10 0 15 8 11 17l-9 22c-4 9-11 13-20 13H16C6 58 1 50 5 41l11-25C20 9 26 6 34 6z"/><circle cx="62" cy="58" r="19" fill="url(#lg)"/></svg>'
+LOGO = '<img src="../assets/img/logo-mark.png" alt="" width="160" height="135" style="height:30px;width:auto;display:block">'
 CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
 FAV = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 84'%3E%3Cpath fill='%23ddd' d='M34 6h48c10 0 15 8 11 17l-9 22c-4 9-11 13-20 13H16C6 58 1 50 5 41l11-25C20 9 26 6 34 6z'/%3E%3Ccircle cx='62' cy='58' r='19' fill='%23fff' stroke='%23000' stroke-width='6'/%3E%3C/svg%3E"
 
@@ -162,7 +162,7 @@ def page(s):
 <meta property="og:type" content="article"><meta property="og:title" content="{E(s["title"])}">
 <meta property="og:description" content="{E(s["intro"][:155])}">
 <link rel="canonical" href="https://fluycomedia.vercel.app/case-studies/{s["slug"]}">
-<link rel="icon" href="{FAV}">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
 <style>{CSS}</style>
 </head>
@@ -211,7 +211,7 @@ def page(s):
       '<a href="../index.html"><span style="width:52px;height:52px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--border)">←</span><span><small>Back to</small><b>Fluyco Media home</b></span></a></div>')
     a('''</main>
 <footer><div class="wrap"><span>© Fluyco Media</span><a href="https://www.instagram.com/fluycomedia/" target="_blank" rel="noopener">Instagram @fluycomedia</a></div></footer>
-<div class="credit-bar" role="contentinfo">Developed by <a href="https://www.linkedin.com/in/brungi-shiva-ganesh" target="_blank" rel="noopener">Brungi Shiva Ganesh</a></div>
+<div class="credit-bar" role="contentinfo">Developed by <a href="https://www.linkedin.com/in/brungi-shiva-ganesh" target="_blank" rel="noopener" aria-label="Brungi Shiva Ganesh on LinkedIn"><span class="sweep">Brungi</span> <span class="sweep">Shiva</span> <span class="sweep">Ganesh</span></a></div>
 </body>
 </html>
 ''')

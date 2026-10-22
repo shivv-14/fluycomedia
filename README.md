@@ -11,6 +11,26 @@ Video-first landing page for **Fluyco Media**, a done-for-you video post-product
 | ![Home, desktop](screenshots/desktop-hero.jpg) | ![Home, mobile](screenshots/mobile-hero.jpg) |
 | ![Case study, desktop](screenshots/desktop-case-study-page.jpg) | ![Case study, mobile](screenshots/mobile-case-study-page.jpg) |
 
+| Problems & Solutions (desktop) | Problems & Solutions (320 px) |
+|---|---|
+| ![Problems & Solutions, desktop](screenshots/desktop-problems-solutions.jpg) | ![Problems & Solutions, 320px](screenshots/mobile-320-problems-solutions.jpg) |
+| ![Nav hover sweep](screenshots/desktop-nav-hover.jpg) | ![Footer with socials, 320px](screenshots/mobile-320-footer.jpg) |
+
+## Latest update
+
+- **Logo:** the official mark (`Logo [MAIN PERFECT]`) is used as an image in the header, footer, case-study pages and favicon. It's trimmed, has a transparent background, and is never stretched.
+- **Socials:** the footer and About sections show Instagram, YouTube and X. YouTube and X are dimmed "coming soon" icons until their URLs are added (`socials` in `CONTENT`, where `url:null` means not supplied yet).
+- **Problems & Solutions:** all seven client problems, each with its fear and solution. It's a three-column table on desktop and numbered stacked cards on mobile.
+- **Recent Work and Portfolio:** no more duplicates. Recent Work shows the 4 newest reels and the Portfolio shows the rest. The filter tabs now only filter the Portfolio, which fixes a bug where they also hid the Recent Work reels.
+- **No downloads:** the video player hides the download button (`controlslist="nodownload"`) and picture-in-picture, right-click "Save video" is blocked on portfolio media, and there are no `download` attributes anywhere.
+- **One hover system:** everything follows the credit bar's left-to-right silver underline sweep. Nav pills, tabs and social tiles get an inset sweep bar, text links and card titles get an underline sweep, and buttons keep their shine sweep. All share one timing (`--t: .35s`) and easing, with matching `:focus-visible` states, `:active` feedback on touch screens, and `prefers-reduced-motion` support. Sections fade in subtly as they scroll into view.
+- **Responsive:** tested at 320, 375, 390, 430, 768, 1024 and 1440 px on the home page and a case-study page, with no horizontal overflow and no console errors. Tap targets are at least 44 px.
+
+**Still needed from the client:**
+- YouTube and X profile URLs.
+- Confirmation of the guarantees in Problems & Solutions: the 48-hour Fast Delivery Guarantee, 12-hour revisions, First Batch Style Lock and the credit system. The 48-hour promise also conflicts with the "24-hour turnaround" shown elsewhere on the site.
+- New portfolio videos, if the latest work differs from what's on the site.
+
 ## What's on the page
 
 1. Sticky header that turns solid after scrolling, highlights the current section, and collapses to a menu on phones
